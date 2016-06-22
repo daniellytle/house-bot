@@ -6,8 +6,7 @@ module.exports = {
 	handle: function(sender, command, msg, text) {
 
 		console.log("command:", command);
-		var text = "";
-
+		
 		if (command === "giphy") {
 			console.log('getting giph')
 			giphy.getGif(msg, function(url) {
