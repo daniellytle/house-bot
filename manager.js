@@ -5,10 +5,10 @@ var giphy = require('./modules/giphy.js');
 module.exports = {
 	handle: function(sender, command, msg, callback) {
 
-		console.log(sender, command, msg);
+		console.log("command:", command, msg);
 		var text = "";
 
-		if (command == "giphy") {
+		if (command === "giphy") {
 			giphy.getGif(msg, callback);
 		} else {
 			callback(msg[0]);
