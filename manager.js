@@ -1,9 +1,9 @@
 var messenger = require('./messenger.js');
 var giphy = require('./modules/giphy.js');
-// let quotes = require('./modules/quotes.js');
+var convers = require('./modules/conversation.js');
 
 module.exports = {
-	handle: function(sender, command, msg) {
+	handle: function(sender, command, msg, text) {
 
 		console.log("command:", command);
 		var text = "";
@@ -14,7 +14,10 @@ module.exports = {
 				messenger.sendImage(sender, url);
 			});
 		} else {
-			messenger.sendText(sender, "idk what yousaid ")
+			convers.getRes(text, function(err, response, data) {
+				var text = data.result.fulfillment.speech;
+				messenger.sendText(sender, text);
+			})
 		}
 	}
 }

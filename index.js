@@ -41,7 +41,7 @@ app.post('/webhook/', function (req, res) {
 			let text = event.message.text
 			let messageArr = text.split(" ");
 
-			manager.handle(sender, messageArr[0], messageArr);
+			manager.handle(sender, messageArr[0], messageArr, text);
 
 		}
 		if (event.postback) {
