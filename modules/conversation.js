@@ -5,6 +5,7 @@ module.exports = {
 	/* Conversational Api */
 		
 	getRes: function(query, callback) {
+		console.log(query)
 		request.post({
 			url: 'https://api.api.ai/v1/query?v=20150910',
 			headers: {
