@@ -9,7 +9,7 @@ module.exports = {
 		
 		request({
 			url: 'https://graph.facebook.com/v2.6/me/messages',
-			qs: {access_token: configtoken},
+			qs: {access_token: config.token},
 			method: 'POST',
 			json: {
 				recipient: {id:sender},
