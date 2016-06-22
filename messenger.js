@@ -4,7 +4,7 @@ module.exports = {
 	/* Sends Messages */
 
 	sendTextMessage: function(sender, text) {
-		let messageData = { text:text }
+		var messageData = { text:text }
 		
 		request({
 			url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -24,7 +24,7 @@ module.exports = {
 	},
 
 	sendImage: function(sender, url) {
-		let messageData = {
+		var messageData = {
 			"attachment": {
 				"type": "template",
 				"payload": {
