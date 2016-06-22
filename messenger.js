@@ -34,7 +34,7 @@ module.exports = {
 					"template_type": "generic",
 					"elements": [{	
 						"title": title,
-						"subtitle": subtitle			
+						"subtitle": subtitle,		
 						"image_url": url					
 					}]
 				}
