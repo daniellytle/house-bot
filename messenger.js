@@ -30,7 +30,8 @@ module.exports = {
 				"type": "template",
 				"payload": {
 					"template_type": "generic",
-					"elements": [{				
+					"elements": [{	
+						"title": "her ya go",			
 						"image_url": url					
 					}]
 				}
