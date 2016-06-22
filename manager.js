@@ -15,6 +15,7 @@ module.exports = {
 			});
 		} else {
 			convers.getRes(text, function(err, response, data) {
+				console.log(data);
 				var text = data.result.fulfillment.speech;
 				messenger.sendText(sender, text);
 			})
