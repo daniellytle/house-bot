@@ -3,7 +3,7 @@ module.exports = {
 	
 	/* Sends Messages */
 
-	sendTextMessage: function(sender, text) {
+	sendText: function(sender, text) {
 		var messageData = { text:text }
 		
 		request({

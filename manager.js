@@ -14,7 +14,7 @@ module.exports = {
 				messenger.sendImage(sender, url);
 			});
 		} else {
-			callback(msg[0]);
+			messenger.sendText(sender, "idk what yousaid ")
 		}
 	}
 }
