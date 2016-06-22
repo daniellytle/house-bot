@@ -11,7 +11,7 @@ module.exports = {
 		if (command == "giphy") {
 			giphy.getGif(msg, callback);
 		} else {
-			callback(msg);
+			callback(msg[0]);
 		}
 	}
 }
