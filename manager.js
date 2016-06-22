@@ -1,4 +1,4 @@
-let messenger = require('./messenger.js');
+var messenger = require('./messenger.js');
 var giphy = require('./modules/giphy.js');
 // let quotes = require('./modules/quotes.js');
 
