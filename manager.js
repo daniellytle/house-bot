@@ -6,7 +6,7 @@ module.exports = {
 	handle: function(sender, command, msg, text) {
 
 		console.log("command:", command);
-		
+
 		if (command === "giphy") {
 			console.log('getting giph')
 			giphy.getGif(msg, function(url) {
@@ -14,8 +14,8 @@ module.exports = {
 			});
 		} else {
 			convers.getRes(text, function(err, response, data) {
-				console.log(data);
-				var text = data.result.fulfillment.speech;
+				// Shorten
+				var text = data.result.fulfillment.speech.substring(0, 200);
 				messenger.sendText(sender, text);
 			})
 		}
