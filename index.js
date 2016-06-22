@@ -41,13 +41,14 @@ app.post('/webhook/', function (req, res) {
 			let messageArr = text.split();
 
 			manager.handle(sender, messageArr[0], messageArr, function(data) {
+				console.log("DATA", data);
 				sendTextMessage(sender, data);
 			});
 
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+			sendTextMessage(sender, "Postback received: " +text.substring(0, 200), token)
 			continue
 		}
 	}
