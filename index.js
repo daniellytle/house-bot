@@ -29,6 +29,7 @@ app.get('/webhook/', function (req, res) {
 // to post data
 app.post('/webhook/', function (req, res) {
 	let messaging_events = req.body.entry[0].messaging
+	console.log(req.body.entry[0].messaging);
 	for (let i = 0; i < messaging_events.length; i++) {
 		let event = req.body.entry[0].messaging[i]
 		let sender = event.sender.id
@@ -38,7 +39,7 @@ app.post('/webhook/', function (req, res) {
 				sendGenericMessage(sender)
 				continue
 			}
-			sendTextMessage(sender, "Ay girl " + event.message.stringify())
+			sendTextMessage(sender, "Ay girl " + text)
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
