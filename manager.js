@@ -9,9 +9,9 @@ module.exports = {
 		var text = "";
 
 		if (command == "giphy") {
-			text = giphy.getGif(msg, callback);
-		} else if (command == "inspire") {
-			// text = quotes.getQuote(msg, callback);
+			giphy.getGif(msg, callback);
+		} else {
+			callback(msg);
 		}
 	}
 }
