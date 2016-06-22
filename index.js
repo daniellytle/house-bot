@@ -3,6 +3,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
+const manager = require('./manager.js')
 const app = express()
 
 app.set('port', (process.env.PORT || 5000))
@@ -34,12 +35,15 @@ app.post('/webhook/', function (req, res) {
 		let event = req.body.entry[0].messaging[i]
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
+
+			// New message
 			let text = event.message.text
-			if (text === 'Generic') {
-				sendGenericMessage(sender)
-				continue
-			}
-			sendTextMessage(sender, "Ay girl " + text)
+			let messageArr = text.split();
+
+			manager.handle(messageArr[0], messageArr, function(data) {
+				sendTextMessage(sender, data);
+			});
+
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
