@@ -24,14 +24,15 @@ module.exports = {
 		})
 	},
 
-	sendImage: function(sender, url) {
+	sendImage: function(sender, url, title = "", subtitle = "") {
 		var messageData = {
 			"attachment": {
 				"type": "template",
 				"payload": {
 					"template_type": "generic",
 					"elements": [{	
-						"title": "her ya go",			
+						"title": title,
+						"subtitle": subtitle			
 						"image_url": url					
 					}]
 				}
