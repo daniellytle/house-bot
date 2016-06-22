@@ -5,6 +5,7 @@ var giphy = require('./modules/giphy.js');
 module.exports = {
 	handle: function(sender, command, msg, callback) {
 
+		console.log(sender, command, msg);
 		var text = "";
 
 		if (command == "giphy") {
