@@ -39,7 +39,7 @@ app.post('/webhook/', function (req, res) {
 
 			// New message
 			let text = event.message.text
-			let messageArr = text.split();
+			let messageArr = text.split(" ");
 
 			manager.handle(sender, messageArr[0], messageArr);
 
