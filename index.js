@@ -40,7 +40,7 @@ app.post('/webhook/', function (req, res) {
 			let text = event.message.text
 			let messageArr = text.split();
 
-			manager.handle(messageArr[0], messageArr, function(data) {
+			manager.handle(sender, messageArr[0], messageArr, function(data) {
 				sendTextMessage(sender, data);
 			});
 
