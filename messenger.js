@@ -25,8 +25,8 @@ module.exports = {
 	},
 
 	sendImage: function(sender, url, title, subtitle) {
-		title = title || ""
-		subtitle = subtitle || ""
+		var title = title || "gif"
+		var subtitle = subtitle || ""
 		var messageData = {
 			"attachment": {
 				"type": "template",
