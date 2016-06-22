@@ -1,4 +1,5 @@
 var request = require('request');
+var config = require('./config');
 module.exports = {
 	
 	/* Sends Messages */
@@ -8,7 +9,7 @@ module.exports = {
 		
 		request({
 			url: 'https://graph.facebook.com/v2.6/me/messages',
-			qs: {access_token:token},
+			qs: {access_token: configtoken},
 			method: 'POST',
 			json: {
 				recipient: {id:sender},
@@ -37,7 +38,7 @@ module.exports = {
 		}
 		request({
 			url: 'https://graph.facebook.com/v2.6/me/messages',
-			qs: {access_token:token},
+			qs: {access_token: config.token},
 			method: 'POST',
 			json: {
 				recipient: {id:sender},

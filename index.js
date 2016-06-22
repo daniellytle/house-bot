@@ -4,6 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const manager = require('./manager.js')
+const config = require('./config.js')
 const app = express()
 
 app.set('port', (process.env.PORT || 5000))
@@ -45,15 +46,12 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Postback received: " +text.substring(0, 200), token)
+			sendTextMessage(sender, "Postback received: " +text.substring(0, 200), config.token)
 			continue
 		}
 	}
 	res.sendStatus(200)
 })
-
-
-const token = "EAAYJEqkK414BALvkePuTID6Ln3pWxIj3G3eNsC1X2wMgIx30R6pW9GR1qhKqapiwDBGdOqZAqKpFGoZCAFsbsMnwd0BgxeZBFtXTrAbiDQOL6zC2gHMZBgoNNxmHVuLOB6cALDx6AVu0z8UVnNk3ADtF2NBgYPfq2Dc7uiuLmAZDZD"
 
 // spin spin sugar
 app.listen(app.get('port'), function() {
