@@ -9,6 +9,7 @@ module.exports = {
 		var text = "";
 
 		if (command === "giphy") {
+			console.log('getting giph')
 			giphy.getGif(msg, callback);
 		} else {
 			callback(msg[0]);
